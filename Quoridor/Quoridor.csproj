@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <Folder Include="Menu\" />
-    <Folder Include="Map\" />
     <Folder Include="AI\" />
     <Folder Include="MoveChar\" />
   </ItemGroup>
