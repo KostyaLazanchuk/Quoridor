@@ -6,9 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Menu\" />
     <Folder Include="AI\" />
-    <Folder Include="MoveChar\" />
   </ItemGroup>
 
 </Project>
