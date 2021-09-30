@@ -6,6 +6,25 @@ namespace Quoridor.Menu
 {
     class Menu
     {
-        int a;
+        private string choose;
+        public string Choose
+        {
+            get
+            {
+                if (choose != " ")
+                {
+                    return choose;
+                }
+                else
+                {
+                    return "Ничего не выбрали";
+                }
+
+            }
+            set
+            {
+                choose = value;
+            }
+        }
     }
 }
