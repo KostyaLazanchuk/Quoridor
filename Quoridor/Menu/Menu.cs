@@ -6,5 +6,6 @@ namespace Quoridor.Menu
 {
     class Menu
     {
+        int a;
     }
 }
