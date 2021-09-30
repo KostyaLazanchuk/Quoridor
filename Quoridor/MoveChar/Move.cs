@@ -6,6 +6,6 @@ namespace Quoridor.MoveChar
 {
     class Move
     {
-        int a;
+        
     }
 }
