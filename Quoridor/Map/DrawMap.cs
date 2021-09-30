@@ -30,6 +30,12 @@ namespace Quoridor.Map
                     {1,0,2,0,2,0,2,0,2,4,2,0,2,0,2,0,2,0,1},
                     {1,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,1}
             };
+           
+            return array;
+        }
+        public void Paint()
+        {
+            int[,] array = Map();
             for (int i = 0; i < 19; i++)
             {
                 for (int j = 0; j < 19; j++)
@@ -41,11 +47,10 @@ namespace Quoridor.Map
                     else if (array[i, j] == 2) Console.Write("  ");
                     else if (array[i, j] == 4) Console.Write("* ");
                     else if (array[i, j] == 5) Console.Write("# ");
-                    else Console.Write(array[i, j]+" ");
+                    else Console.Write(array[i, j] + " ");
                 }
                 Console.WriteLine();
             }
-            return array;
         }
     }
 }
