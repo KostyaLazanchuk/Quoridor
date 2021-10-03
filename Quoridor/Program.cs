@@ -14,11 +14,27 @@ namespace Quoridor
             DrawMap drawMap = new DrawMap();
             map = drawMap.Map();
             Move move = new Move();
+            MoveWall movew = new MoveWall();
             int costx = 17, y = 1, x = 9, part = 0;
             int costx1 = 17, y1 = 17, x1 = 9;
             int name1 = 5;
             int name2 = 4;
+            int conts = 0;
             while (true)
+            {
+                if (conts == 0)
+                {
+                    Console.Clear();
+                    drawMap.Paint(map);
+                    movew.MoveW(ref map, ref conts);
+                }
+                else
+                {
+                    drawMap.Paint(map);
+                    conts--;
+                }
+            }
+            /*while (true)
             {
                 drawMap.Paint(map);
                 Console.WriteLine($"Ходит игрок {part + 1}");
@@ -70,7 +86,7 @@ namespace Quoridor
                     }
                 }
             }
-
+            */
             /*while (true)
             {
                 Console.SetCursorPosition(costx, y);
