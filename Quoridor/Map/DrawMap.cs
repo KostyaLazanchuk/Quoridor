@@ -33,9 +33,9 @@ namespace Quoridor.Map
            
             return array;
         }
-        public void Paint()
+        public void Paint( int[,] array)
         {
-            int[,] array = Map();
+            
             for (int i = 0; i < 19; i++)
             {
                 for (int j = 0; j < 19; j++)
@@ -45,7 +45,7 @@ namespace Quoridor.Map
                     else if (array[i, j] == 8) Console.Write("--");
                     else if (array[i, j] == 9) Console.Write(" -");
                     else if (array[i, j] == 2) Console.Write("  ");
-                    else if (array[i, j] == 4) Console.Write("* ");
+                    else if (array[i, j] == 4) Console.Write("? ");
                     else if (array[i, j] == 5) Console.Write("# ");
                     else Console.Write(array[i, j] + " ");
                 }

@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AI\" />
+    <Folder Include="AI\NewFolder\" />
+    <Folder Include="NewFolder\" />
   </ItemGroup>
 
 </Project>
