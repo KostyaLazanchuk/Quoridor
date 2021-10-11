@@ -10,6 +10,7 @@ namespace Quoridor.MoveChar
         public int wallmapx = 8, wallmapy = 8;
         public void MoveW(ref int[,] map, ref int conts)
         {
+            
             Console.SetCursorPosition(wallx, wally);
             ConsoleKeyInfo wall = Console.ReadKey(true);
             if (topleft == 1) Console.Write("-");

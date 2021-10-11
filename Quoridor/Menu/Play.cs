@@ -6,6 +6,7 @@ namespace Quoridor.Menu
 {
     class Play : ResultPage
     {
+        Process process = new Process();
         public void StartGamesVsAI()
         {
             //вызов метода с игрой
@@ -15,8 +16,8 @@ namespace Quoridor.Menu
         }
         public void StartGamesVsPlayer()
         {
-            //вызов метода с игрой
-            Console.WriteLine("на стадии разработки");
+            Console.Clear();
+            process.Game();
             int a = Convert.ToInt32(Console.ReadLine());
             Victory(ref a);
 
