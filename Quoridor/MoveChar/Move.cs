@@ -1,4 +1,5 @@
 ﻿using Quoridor.Map;
+using Quoridor.Menu;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,22 +7,13 @@ using System.Threading;
 
 namespace Quoridor.MoveChar
 {
-    class Move
+    class Move 
     {
-        /*public int costx1 = 17, playerY1 = 1, playerX1 = 9;*/
+ 
 
         public void MoveP(ref int costx, ref int playerY, ref int playerX, ref int name, ref int[,] map, ref int contsP)
         {
-            /*int[,] map = new int[19, 19];
-            DrawMap drawMap = new DrawMap();
-            map = drawMap.Map();*/
-           /* for (int i = 0; i < 19; i++)
-            {
-                for (int j=0; j<19; j++)
-                {
 
-                }
-            }*/
             Console.SetCursorPosition(costx, playerY);
 
             ConsoleKeyInfo player1 = Console.ReadKey(true);
@@ -33,7 +25,7 @@ namespace Quoridor.MoveChar
                 costx = costx - 4;
                 map[playerY, playerX] = name;
                 contsP++;
-                
+
             }
             if (player1.Key == ConsoleKey.RightArrow && costx + 4 <= 34 && map[playerY, playerX + 1] == 2)
             {
@@ -58,7 +50,7 @@ namespace Quoridor.MoveChar
                 contsP++;
             }
 
-
+            
 
 
         }

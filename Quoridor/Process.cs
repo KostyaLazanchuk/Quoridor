@@ -1,4 +1,5 @@
 ﻿using Quoridor.Map;
+using Quoridor.Menu;
 using Quoridor.MoveChar;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Quoridor
             map = drawMap.Map();
             Move move = new Move();
             MoveWall movew = new MoveWall();
+            ResultPage resultPage = new ResultPage();
             int costx = 17, y = 1, x = 9, part = 0;
             int costx1 = 17, y1 = 17, x1 = 9;
             int name1 = 5;
@@ -45,6 +47,7 @@ namespace Quoridor
                                 }
                                 else
                                 {
+                                    resultPage.Check(name1, y);
                                     part++;
                                     contsP--;
                                     break;
@@ -96,6 +99,7 @@ namespace Quoridor
                                 }
                                 else 
                                 {
+                                    resultPage.Check(name2, y1);
                                     part--;
                                     contsP--;
                                     break; 

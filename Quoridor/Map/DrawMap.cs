@@ -30,12 +30,12 @@ namespace Quoridor.Map
                     {1,0,2,0,2,0,2,0,2,4,2,0,2,0,2,0,2,0,1},
                     {1,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,1}
             };
-           
+
             return array;
         }
-        public void Paint( int[,] array)
+        public void Paint(int[,] array)
         {
-            
+
             for (int i = 0; i < 19; i++)
             {
                 for (int j = 0; j < 19; j++)

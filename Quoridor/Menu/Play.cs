@@ -4,23 +4,21 @@ using System.Text;
 
 namespace Quoridor.Menu
 {
-    class Play : ResultPage
+    class Play
     {
         Process process = new Process();
+        Process1 process1 = new Process1();
         public void StartGamesVsAI()
         {
             //вызов метода с игрой
-            Console.WriteLine("на стадии разработки");
-            int a = Convert.ToInt32(Console.ReadLine());
-            Victory(ref a);
+            process1.Game();
+
         }
         public void StartGamesVsPlayer()
         {
             Console.Clear();
             process.Game();
-            int a = Convert.ToInt32(Console.ReadLine());
-            Victory(ref a);
-
+      
         }
     }
 }
