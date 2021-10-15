@@ -5,7 +5,7 @@ using Quoridor.MoveChar;
 using System;
 using System.Threading;
 
-public class Process1
+public class ProcessVsAI
 {
     public void Game()
     {
@@ -18,9 +18,10 @@ public class Process1
         int costx1 = 17, y1 = 17, x1 = 9;
         int name1 = 5;
         int name2 = 4;
-        int conts = 0;
         int contsW = 0;
         int contsP = 0;
+        int contsWallP = 10;
+        int contsWallAI = 10;
         ResultPage resultPage = new ResultPage();
 
         AIWall aiBot = new AIWall();
@@ -33,6 +34,7 @@ public class Process1
             {
                 Console.WriteLine("Ходит Игрок");
                 Console.WriteLine("Ходить или ставить стенку (1) или (2)?");
+                Console.WriteLine("У вас осталось " + contsWallP + " стенок");
                 string step = Console.ReadLine();
                 switch (step)
                 {
@@ -57,6 +59,11 @@ public class Process1
                         Console.Clear();
                         break;
                     case "2":
+                        if (contsWallP == 0)
+                        {
+                            Console.WriteLine("У вас закончились стенки");
+                            goto case "1";
+                        }
                         while (true)
                         {
                             if (contsW == 0)
@@ -70,13 +77,14 @@ public class Process1
                                 drawMap.Paint(map);
                                 contsW--;
                                 part++;
+                                contsWallP--;
                                 break;
                             }
                         }
                         Console.Clear();
                         break;
                     default:
-                        Console.WriteLine("Не прввильно сделан ход (намжмите любую кнопку, чтобы продолжить)");
+                        Console.WriteLine("Не правильно сделан ход (намжмите любую кнопку, чтобы продолжить)");
                         Console.ReadKey();
                         Console.Clear();
                         break;
@@ -84,29 +92,59 @@ public class Process1
             }
             else if (part == 1)
             {
+                Random morw = new Random();
+                int rng = morw.Next(1, 3);
                 while (true)
                 {
-                    if (contsP == 0)
+                    if (rng == 1)
                     {
-                        int rnd = random.Next(1, 4);
-                        drawMap.Paint(map);
-                        aIMove.Move(ref costx1, ref y1, ref x1, ref name2, ref map, ref contsP, rnd);
+                        while (true)
+                        {
+                            if (contsP == 0)
+                            {
+                                int rnd = random.Next(1, 4);
+                                drawMap.Paint(map);
+                                aIMove.Move(ref costx1, ref y1, ref x1, ref name2, ref map, ref contsP, rnd);
+
+                            }
+                            else
+                            {
+                                resultPage.Check(name2, y1);
+                                part--;
+                                contsP--;
+                                Console.Clear();
+                                break;
+                            }
+                        }
+                        break;
 
                     }
-                    else
+                    else if (contsWallAI != 0 && rng == 2)
                     {
-                        resultPage.Check(name2, y1);
-                        part--;
-                        contsP--;
+                        while (true)
+                        {
+                            if (contsW == 0)
+                            {
+                                Console.Clear();
+                                drawMap.Paint(map);
+                                aiBot.MoveWall(ref map, ref contsW);
+                            }
+                            else
+                            {
+                                drawMap.Paint(map);
+                                contsW--;
+                                part--;
+                                contsWallAI--;
+                                break;
+                            }
+                        }
+                        Console.Clear();
                         break;
                     }
+                    else rng = 1;
                 }
-               
-               
             }
         }
 
     }
-
-
 }

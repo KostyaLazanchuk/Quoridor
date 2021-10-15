@@ -6,8 +6,8 @@ namespace Quoridor.Menu
 {
     class Play
     {
-        Process process = new Process();
-        Process1 process1 = new Process1();
+        ProcessVsPlayers process = new ProcessVsPlayers();
+        ProcessVsAI process1 = new ProcessVsAI();
         public void StartGamesVsAI()
         {
             //вызов метода с игрой

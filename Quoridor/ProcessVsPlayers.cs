@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace Quoridor
 {
-    class Process
+    class ProcessVsPlayers
     {
         public void Game()
         {
@@ -24,12 +24,16 @@ namespace Quoridor
             int name2 = 4;
             int contsW = 0;
             int contsP = 0;
+            int contsWallP1 = 10;
+            int contsWallP2 = 10;
 
             while (true)
             {
                 drawMap.Paint(map);
                 Console.WriteLine($"Ходит игрок {part + 1}");
                 Console.WriteLine("Ходить или ставить стенку (1) или (2)?");
+                Console.WriteLine("Стенок у игрока 1: " + contsWallP1);
+                Console.WriteLine("Стенок у игрока 2: " + contsWallP2);
                 string step = Console.ReadLine();
                 if (part == 0)
                 {
@@ -56,6 +60,7 @@ namespace Quoridor
                             Console.Clear();
                             break;
                         case "2":
+                            if (contsWallP1 == 0) goto case "1";
                             while (true)
                             {
                                 if (contsW == 0)
@@ -69,6 +74,7 @@ namespace Quoridor
                                     drawMap.Paint(map);
                                     contsW--;
                                     part++;
+                                    contsWallP1--;
                                     break;
                                 }
 
@@ -108,6 +114,7 @@ namespace Quoridor
                             Console.Clear();
                             break;
                         case "2":
+                            if (contsWallP2 == 0) goto case "1";
                             while (true)
                             {
                                 if (contsW == 0)
@@ -121,6 +128,7 @@ namespace Quoridor
                                     drawMap.Paint(map);
                                     contsW--;
                                     part--;
+                                    contsWallP2--;
                                     break;
                                 }
 
