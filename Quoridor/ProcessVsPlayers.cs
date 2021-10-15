@@ -71,7 +71,12 @@ namespace Quoridor
                                     drawMap.Paint(map);
                                     movew.MoveW(ref map, ref contsW,ref contsWAL);
                                 }
-                                else if (contsWAL == 1) find.FindW(map, x, y, x1, y1, ref contsWAL);
+                                else if (contsWAL == 1)
+                                {
+                                    find.FindW(map, x, y, ref contsWAL, name1);
+                                    contsWAL++;
+                                    find.FindW(map, x1, y1, ref contsWAL, name2);
+                                }
                                 else
                                 {
                                     drawMap.Paint(map);
@@ -126,7 +131,12 @@ namespace Quoridor
                                     drawMap.Paint(map);
                                     movew.MoveW(ref map, ref contsW,ref contsWAL);
                                 }
-                                else if (contsWAL == 1) find.FindW(map, x, y, x1, y1, ref contsWAL);
+                                else if (contsWAL == 1)
+                                {
+                                    find.FindW(map, x, y, ref contsWAL, name1);
+                                    contsWAL++;
+                                    find.FindW(map, x1, y1, ref contsWAL, name2);
+                                }
                                 else
                                 {
                                     drawMap.Paint(map);
