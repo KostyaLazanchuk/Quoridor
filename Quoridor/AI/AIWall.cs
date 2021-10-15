@@ -6,7 +6,7 @@ namespace Quoridor.AI
 {
     class AIWall
     {
-        public void MoveWall(ref int[,] map, ref int contsW)
+        public void MoveWall(ref int[,] map, ref int contsW, ref int contsWAL)
         {
             while (true)
             {
@@ -37,6 +37,7 @@ namespace Quoridor.AI
                     }
                 }
             }
+            contsWAL++;
             contsW++;
         }
     }

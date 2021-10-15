@@ -15,6 +15,7 @@ namespace Quoridor
             int[,] map = new int[19, 19];
             DrawMap drawMap = new DrawMap();
             map = drawMap.Map();
+            FindWay find = new FindWay();
             Move move = new Move();
             MoveWall movew = new MoveWall();
             ResultPage resultPage = new ResultPage();
@@ -24,6 +25,7 @@ namespace Quoridor
             int name2 = 4;
             int contsW = 0;
             int contsP = 0;
+            int contsWAL = 0;
             int contsWallP1 = 10;
             int contsWallP2 = 10;
 
@@ -47,7 +49,7 @@ namespace Quoridor
                                 {
                                     Console.Clear();
                                     drawMap.Paint(map);
-                                    move.MoveP(ref costx, ref y, ref x, ref name1, ref map, ref contsP);
+                                    move.MoveP(ref costx, ref y, ref x, ref name1,ref map, ref contsP);
                                 }
                                 else
                                 {
@@ -67,8 +69,9 @@ namespace Quoridor
                                 {
                                     Console.Clear();
                                     drawMap.Paint(map);
-                                    movew.MoveW(ref map, ref contsW);
+                                    movew.MoveW(ref map, ref contsW,ref contsWAL);
                                 }
+                                else if (contsWAL == 1) find.FindW(map, x, y, x1, y1, ref contsWAL);
                                 else
                                 {
                                     drawMap.Paint(map);
@@ -101,7 +104,7 @@ namespace Quoridor
                                 {
                                     Console.Clear();
                                     drawMap.Paint(map);
-                                    move.MoveP(ref costx1, ref y1, ref x1, ref name2, ref map, ref contsP);
+                                    move.MoveP(ref costx1, ref y1, ref x1, ref name2,ref map, ref contsP);
                                 }
                                 else 
                                 {
@@ -121,8 +124,9 @@ namespace Quoridor
                                 {
                                     Console.Clear();
                                     drawMap.Paint(map);
-                                    movew.MoveW(ref map, ref contsW);
+                                    movew.MoveW(ref map, ref contsW,ref contsWAL);
                                 }
+                                else if (contsWAL == 1) find.FindW(map, x, y, x1, y1, ref contsWAL);
                                 else
                                 {
                                     drawMap.Paint(map);

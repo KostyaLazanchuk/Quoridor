@@ -10,7 +10,7 @@ namespace Quoridor.Map
         {
             int[,] array = new int[19, 19]
             {
-                    {1,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,1},
+                    {1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1},
                     {1,0,7,0,2,0,2,0,2,5,7,0,2,0,2,0,2,0,1},
                     {1,2,7,2,2,2,2,8,8,8,7,2,2,2,2,2,2,2,1},
                     {1,0,7,0,2,0,2,0,2,0,7,0,2,0,2,0,2,0,1},
@@ -30,7 +30,6 @@ namespace Quoridor.Map
                     {1,0,2,0,2,0,2,0,2,4,2,0,2,0,2,0,2,0,1},
                     {1,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,1}
             };
-
             return array;
         }
         public void Paint(int[,] array)
@@ -44,6 +43,7 @@ namespace Quoridor.Map
                     else if (array[i, j] == 7) Console.Write("| ");
                     else if (array[i, j] == 8) Console.Write("--");
                     else if (array[i, j] == 9) Console.Write(" -");
+                    else if (array[i, j] == 3) Console.Write(" -");
                     else if (array[i, j] == 2) Console.Write("  ");
                     else if (array[i, j] == 4) Console.Write("? ");
                     else if (array[i, j] == 5) Console.Write("# ");
@@ -52,5 +52,6 @@ namespace Quoridor.Map
                 Console.WriteLine();
             }
         }
+        
     }
 }

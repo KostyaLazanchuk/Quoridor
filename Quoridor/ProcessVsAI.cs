@@ -11,6 +11,7 @@ public class ProcessVsAI
     {
         int[,] map = new int[19, 19];
         DrawMap drawMap = new DrawMap();
+        FindWay find = new FindWay();
         map = drawMap.Map();
         Move move = new Move();
         MoveWall movew = new MoveWall();
@@ -20,6 +21,7 @@ public class ProcessVsAI
         int name2 = 4;
         int contsW = 0;
         int contsP = 0;
+        int contsWAL = 0;
         int contsWallP = 10;
         int contsWallAI = 10;
         ResultPage resultPage = new ResultPage();
@@ -70,8 +72,9 @@ public class ProcessVsAI
                             {
                                 Console.Clear();
                                 drawMap.Paint(map);
-                                movew.MoveW(ref map, ref contsW);
+                                movew.MoveW(ref map, ref contsW, ref contsWAL);
                             }
+                            else if (contsWAL == 1) find.FindW(map, x, y, x1, y1, ref contsWAL);
                             else
                             {
                                 drawMap.Paint(map);
@@ -127,8 +130,9 @@ public class ProcessVsAI
                             {
                                 Console.Clear();
                                 drawMap.Paint(map);
-                                aiBot.MoveWall(ref map, ref contsW);
+                                aiBot.MoveWall(ref map, ref contsW, ref contsWAL);
                             }
+                            else if (contsWAL == 1) find.FindW(map, x, y, x1, y1, ref contsWAL);
                             else
                             {
                                 drawMap.Paint(map);

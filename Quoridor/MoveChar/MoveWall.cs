@@ -6,7 +6,8 @@ namespace Quoridor.MoveChar
     {
         public int wallx = 15, wally = 8, topleft = 1;
         public int wallmapx = 8, wallmapy = 8, eight = 0;
-        public void MoveW(ref int[,] map, ref int contsW)
+        
+        public void MoveW(ref int[,] map, ref int contsW, ref int constWAL)
         {
             
             Console.SetCursorPosition(wallx, wally);
@@ -61,6 +62,7 @@ namespace Quoridor.MoveChar
                     map[wallmapy - 1, wallmapx] = 7;
                     map[wallmapy + 1, wallmapx] = 7;
                     if (wallmapy == 8 && wallmapx == 8) eight++;
+                    constWAL++;
                     contsW++;
                 }
                 else if (topleft == 0 && map[wallmapy, wallmapx - 1] != 8 && map[wallmapy, wallmapx + 1] != 8)
@@ -69,6 +71,7 @@ namespace Quoridor.MoveChar
                     map[wallmapy, wallmapx - 1] = 8;
                     map[wallmapy, wallmapx + 1] = 8;
                     if (wallmapy == 8 && wallmapx == 8) eight++;
+                    constWAL++;
                     contsW++;
                 }
                 else map[wallmapy, wallmapx] = 2;

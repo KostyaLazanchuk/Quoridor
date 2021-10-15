@@ -11,7 +11,7 @@ namespace Quoridor.MoveChar
     {
  
 
-        public void MoveP(ref int costx, ref int playerY, ref int playerX, ref int name, ref int[,] map, ref int contsP)
+        public void MoveP(ref int costx, ref int playerY, ref int playerX, ref int name,ref int[,] map, ref int contsP)
         {
 
             Console.SetCursorPosition(costx, playerY);
