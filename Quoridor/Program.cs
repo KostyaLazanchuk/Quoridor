@@ -1,8 +1,4 @@
-﻿using Quoridor.Map;
-using Quoridor.View;
-using Quoridor.MoveChar;
-using System;
-using System.Threading;
+﻿using Quoridor.Menu;
 
 namespace Quoridor
 {
@@ -10,7 +6,7 @@ namespace Quoridor
     {
         static void Main(string[] args)
         {
-            BasePages basePages = new BasePages();
+            Pages basePages = new Pages();
             basePages.FirstPages();
         }
     }

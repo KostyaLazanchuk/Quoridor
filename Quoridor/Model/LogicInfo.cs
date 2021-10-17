@@ -26,7 +26,7 @@ namespace Quoridor
         public void Step(ref int costx, ref int y, ref int x, ref int name1, ref int[,] map, ref int contsP, ref int part)
         {
             Move move = new Move();
-            ResultPage resultPage = new ResultPage();
+            Pages pages = new Pages();
 
 
             DrawMap mapWork = new DrawMap();
@@ -41,7 +41,7 @@ namespace Quoridor
                 }
                 else
                 {
-                    resultPage.Check(name1, y);
+                    pages.Check(name1, y);
                     if (part == 1)
                     {
                         part--;

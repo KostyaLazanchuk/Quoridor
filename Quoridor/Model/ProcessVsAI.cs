@@ -15,7 +15,7 @@ public class ProcessVsAI
         map = mapWork.Map();
       
         LogicInfo logicInfo = new LogicInfo();
-        ResultPage resultPage = new ResultPage();
+        Pages pages = new Pages();
 
         AiBot aIMove = new AiBot();
         Random random = new Random();
@@ -72,7 +72,7 @@ public class ProcessVsAI
                             }
                             else
                             {
-                                resultPage.Check(logicInfo.name2, logicInfo.y1);
+                                pages.Check(logicInfo.name2, logicInfo.y1);
                                 logicInfo.part--;
                                 logicInfo.contsP--;
                                 Console.Clear();
