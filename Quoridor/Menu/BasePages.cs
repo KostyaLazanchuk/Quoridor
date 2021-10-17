@@ -58,7 +58,7 @@ namespace Quoridor.Menu
         }
         public void HelpPage()
         {
-            Console.WriteLine(" Бог в помощь \n Нажмите любую кнопку, чтоб вернуться");
+            Console.WriteLine(" Ходьба: стрелочки \n Чтобы поставить стенку, нажмите Enter \n Чтобы переверунть стенку, нажмите Tab \n Нажмите любую кнопку, чтоб вернуться");
             Console.ReadKey();
             SecondPages();
         }

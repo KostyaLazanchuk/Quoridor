@@ -10,7 +10,7 @@ namespace Quoridor.Menu
         ProcessVsAI process1 = new ProcessVsAI();
         public void StartGamesVsAI()
         {
-            //вызов метода с игрой
+            Console.Clear();
             process1.Game();
 
         }
