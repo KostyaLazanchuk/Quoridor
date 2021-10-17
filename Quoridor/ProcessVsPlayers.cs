@@ -16,9 +16,6 @@ namespace Quoridor
             DrawMap mapWork = new DrawMap();
             map = mapWork.Map();
 
-            Move move = new Move();
-            ResultPage resultPage = new ResultPage();
-
             LogicInfo logicInfo = new LogicInfo();
 
             while (true)
@@ -39,8 +36,17 @@ namespace Quoridor
                             Console.Clear();
                             break;
                         case "2":
-                            if (logicInfo.contsWallP1 == 0) goto case "1";
-                            while (true)
+                            if (logicInfo.contsWallP1 == 0)
+                            {
+                                Console.WriteLine("У вас закончились стенки");
+                                goto case "1";
+                            }
+                            else
+                            {
+                                logicInfo.PutWall(ref logicInfo.y, ref logicInfo.x, ref logicInfo.name1, ref map, ref logicInfo.contsW, ref logicInfo.x1, ref logicInfo.y1, ref logicInfo.name2, ref logicInfo.part, ref logicInfo.contsWallP1);
+                            }
+                            
+                           /* while (true)
                             {
                                 if (logicInfo.contsW == 0)
                                 {
@@ -57,7 +63,7 @@ namespace Quoridor
                                     break;
                                 }
 
-                            }
+                            }*/
                             Console.Clear();
                             break;
                         default:
@@ -95,8 +101,17 @@ namespace Quoridor
                             Console.Clear();
                             break;
                         case "2":
-                            if (logicInfo.contsWallP2 == 0) goto case "1";
-                            while (true)
+                            if (logicInfo.contsWallP2 == 0)
+                            {
+                                Console.WriteLine("У вас закончились стенки");
+                                goto case "1";
+                            }
+                            else
+                            {
+                                logicInfo.PutWall(ref logicInfo.y, ref logicInfo.x, ref logicInfo.name1, ref map, ref logicInfo.contsW, ref logicInfo.x1, ref logicInfo.y1, ref logicInfo.name2, ref logicInfo.part, ref logicInfo.contsWallP2);
+                            }
+                           
+                           /* while (true)
                             {
                                 if (logicInfo.contsW == 0)
                                 {
@@ -113,7 +128,7 @@ namespace Quoridor
                                     break;
                                 }
 
-                            }
+                            }*/
                             Console.Clear();
                             break;
                         default:

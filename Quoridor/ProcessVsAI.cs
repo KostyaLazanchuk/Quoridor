@@ -12,9 +12,7 @@ public class ProcessVsAI
     {
         int[,] map = new int[19, 19];
         DrawMap mapWork = new DrawMap();
-
         map = mapWork.Map();
-        Move move = new Move();
       
         LogicInfo logicInfo = new LogicInfo();
         ResultPage resultPage = new ResultPage();
@@ -33,7 +31,8 @@ public class ProcessVsAI
                 switch (step)
                 {
                     case "1":
-                        while (true)
+                        logicInfo.Step(ref logicInfo.costx, ref logicInfo.y, ref logicInfo.x, ref logicInfo.name1, ref map, ref logicInfo.contsP, ref logicInfo.part);
+                        /*while (true)
                         {
                             if (logicInfo.contsP == 0)
                             {
@@ -48,7 +47,7 @@ public class ProcessVsAI
                                 logicInfo.contsP--;
                                 break;
                             }
-                        }
+                        }*/
 
                         Console.Clear();
                         break;
@@ -58,7 +57,12 @@ public class ProcessVsAI
                             Console.WriteLine("У вас закончились стенки");
                             goto case "1";
                         }
-                        while (true)
+                        else
+                        {
+                            logicInfo.PutWall(ref logicInfo.y, ref logicInfo.x, ref logicInfo.name1, ref map, ref logicInfo.contsW, ref logicInfo.x1, ref logicInfo.y1, ref logicInfo.name2, ref logicInfo.part, ref logicInfo.contsWallP1);
+                        }
+
+                        /*while (true)
                         {
                             if (logicInfo.contsW == 0)
                             {
@@ -74,7 +78,7 @@ public class ProcessVsAI
                                 logicInfo.contsWallP--;
                                 break;
                             }
-                        }
+                        }*/
                         Console.Clear();
                         break;
                     default:
