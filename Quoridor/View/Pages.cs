@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Quoridor.Menu
 {
@@ -56,6 +57,7 @@ namespace Quoridor.Menu
         public void ExitEvent()
         {
             Console.WriteLine("Пока");
+            Environment.Exit(0);
             return;
         }
         public void HelpPage()

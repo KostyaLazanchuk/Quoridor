@@ -18,7 +18,7 @@ namespace Quoridor
             {
                 mapWork.Paint(map);
                 Console.WriteLine($"Ходит игрок {logicInfo.part + 1}");
-                Console.WriteLine("Ходить или ставить стенку (1) или (2)? \nВыйти из игры (3)");
+                Console.WriteLine("Ходить или ставить стенку (1) или (2)? \nВыйти из игры (9)");
                 Console.WriteLine("Стенок у игрока 1: " + logicInfo.contsWallP1);
                 Console.WriteLine("Стенок у игрока 2: " + logicInfo.contsWallP2);
                 string step = Console.ReadLine();
@@ -43,7 +43,7 @@ namespace Quoridor
                             }
                             Console.Clear();
                             break;
-                        case "3":
+                        case "9":
                             {
                                 pages.FirstPages();
                                 break;
@@ -77,7 +77,7 @@ namespace Quoridor
                             }
                             Console.Clear();
                             break;
-                        case "3":
+                        case "9":
                             {
                                 pages.FirstPages();
                                 break;

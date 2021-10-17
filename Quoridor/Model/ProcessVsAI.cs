@@ -23,7 +23,7 @@ public class ProcessVsAI
             if (logicInfo.part == 0)
             {
                 Console.WriteLine("Ходит Игрок");
-                Console.WriteLine("Ходить или ставить стенку (1) или (2)? \nВыйти из игры (3) ");
+                Console.WriteLine("Ходить или ставить стенку (1) или (2)? \nВыйти из игры (9) ");
                 Console.WriteLine("У вас осталось " + logicInfo.contsWallP + " стенок");
                 string step = Console.ReadLine();
                 switch (step)
@@ -44,7 +44,7 @@ public class ProcessVsAI
                         }                  
                         Console.Clear();
                         break;
-                    case "3":
+                    case "9":
                         {
                             pages.FirstPages();
                             break;
