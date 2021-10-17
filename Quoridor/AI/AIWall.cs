@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quoridor.Map;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,8 +7,11 @@ namespace Quoridor.AI
 {
     class AIWall
     {
-        public void MoveWall(ref int[,] map, ref int contsW, ref int contsWAL)
+
+        public void MoveWall(ref int[,] map, int x, int y, int name1, int x1, int y1, int name2,ref int contsW)
         {
+            int contsWAL = 0;
+            FindWay find = new FindWay();
             while (true)
             {
                 Random rng = new Random();
@@ -23,7 +27,16 @@ namespace Quoridor.AI
                         map[wally, wallx] = 7;
                         map[wally - 1, wallx] = 7;
                         map[wally + 1, wallx] = 7;
-                        break;
+                        find.FindW(map, x, y, ref contsWAL, name1);
+                        contsWAL++;
+                        find.FindW(map, x1, y1, ref contsWAL, name2);
+                        if (contsWAL > 0)
+                        {
+                            map[wally, wallx] = 2;
+                            map[wally - 1, wallx] = 2;
+                            map[wally + 1, wallx] = 2;
+                        }
+                        else break;
                     }
                 }
                 else
@@ -32,12 +45,20 @@ namespace Quoridor.AI
                     {
                         map[wally, wallx] = 8;
                         map[wally, wallx + 1] = 8;
-                        map[wally, wallx - 1] = 8;
-                        break;
+                        map[wally, wallx - 1] = 8; 
+                        find.FindW(map, x, y, ref contsWAL, name1);
+                        contsWAL++;
+                        find.FindW(map, x1, y1, ref contsWAL, name2);
+                        if (contsWAL > 0)
+                        {
+                            map[wally, wallx] = 2;
+                            map[wally, wallx + 1] = 2;
+                            map[wally, wallx - 1] = 2;
+                        }
+                        else break;
                     }
                 }
             }
-            contsWAL++;
             contsW++;
         }
     }

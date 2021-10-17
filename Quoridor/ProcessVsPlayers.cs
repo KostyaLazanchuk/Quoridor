@@ -25,7 +25,6 @@ namespace Quoridor
             int name2 = 4;
             int contsW = 0;
             int contsP = 0;
-            int contsWAL = 0;
             int contsWallP1 = 10;
             int contsWallP2 = 10;
 
@@ -69,13 +68,7 @@ namespace Quoridor
                                 {
                                     Console.Clear();
                                     drawMap.Paint(map);
-                                    movew.MoveW(ref map, ref contsW,ref contsWAL);
-                                }
-                                else if (contsWAL == 1)
-                                {
-                                    find.FindW(map, x, y, ref contsWAL, name1);
-                                    contsWAL++;
-                                    find.FindW(map, x1, y1, ref contsWAL, name2);
+                                    movew.MoveW(ref map,x,y,name1,x1,y1,name2, ref contsW);
                                 }
                                 else
                                 {
@@ -129,13 +122,7 @@ namespace Quoridor
                                 {
                                     Console.Clear();
                                     drawMap.Paint(map);
-                                    movew.MoveW(ref map, ref contsW,ref contsWAL);
-                                }
-                                else if (contsWAL == 1)
-                                {
-                                    find.FindW(map, x, y, ref contsWAL, name1);
-                                    contsWAL++;
-                                    find.FindW(map, x1, y1, ref contsWAL, name2);
+                                    movew.MoveW(ref map, x, y, name1, x1, y1, name2, ref contsW);
                                 }
                                 else
                                 {
