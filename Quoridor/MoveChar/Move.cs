@@ -20,34 +20,77 @@ namespace Quoridor.MoveChar
 
             if (player1.Key == ConsoleKey.LeftArrow && costx - 4 >= 0 && map[playerY, playerX - 1] == 2)
             {
-                map[playerY, playerX] = 0;
-                playerX = playerX - 2;
-                costx = costx - 4;
-                map[playerY, playerX] = name;
-                contsP++;
+                if (map[playerY, playerX - 2] != 0 && map[playerY, playerX - 3] != 1)
+                {
+                    map[playerY, playerX] = 0;
+                    playerX = playerX - 4;
+                    costx = costx - 8;
+                    map[playerY, playerX] = name;
+                    contsP++;
+                }
+                else if (map[playerY, playerX - 2] == 0)
+                {
+                    map[playerY, playerX] = 0;
+                    playerX = playerX - 2;
+                    costx = costx - 4;
+                    map[playerY, playerX] = name;
+                    contsP++;
+                }
 
             }
             if (player1.Key == ConsoleKey.RightArrow && costx + 4 <= 34 && map[playerY, playerX + 1] == 2)
             {
-                map[playerY, playerX] = 0;
-                playerX = playerX + 2; costx = costx + 4;
-                map[playerY, playerX] = name;
-                contsP++;
+                if (map[playerY, playerX + 2] != 0 && map[playerY, playerX + 3] == 2)
+                {
+                    map[playerY, playerX] = 0;
+                    playerX = playerX + 4; 
+                    costx = costx + 8;
+                    map[playerY, playerX] = name;
+                    contsP++;
+                }
+                else if(map[playerY,playerX + 2] == 0)
+                {
+                    map[playerY, playerX] = 0;
+                    playerX = playerX + 2; 
+                    costx = costx + 4;
+                    map[playerY, playerX] = name;
+                    contsP++;
+                }
             }
             if (player1.Key == ConsoleKey.UpArrow && playerY - 2 >= 0 && map[playerY - 1, playerX] == 2)
             {
-                map[playerY, playerX] = 0;
-                playerY = playerY - 2;
-                map[playerY, playerX] = name;
-                contsP++;
+                if (map[playerY - 2, playerX] != 0 && map[playerY - 3, playerX] == 2)
+                {
+                    map[playerY, playerX] = 0;
+                    playerY = playerY - 4;
+                    map[playerY, playerX] = name;
+                    contsP++;
+                }
+                else if(map[playerY - 2, playerX] == 0 || map[playerY - 3,playerX] == 3)
+                {
+                    map[playerY, playerX] = 0;
+                    playerY = playerY - 2;
+                    map[playerY, playerX] = name;
+                    contsP++;
+                }
             }
 
             if (player1.Key == ConsoleKey.DownArrow && playerY + 2 <= 17 && map[playerY + 1, playerX] == 2)
             {
-                map[playerY, playerX] = 0;
-                playerY = playerY + 2;
-                map[playerY, playerX] = name;
-                contsP++;
+                if (map[playerY + 2, playerX] != 0 && map[playerY + 3, playerX] == 2)
+                {
+                    map[playerY, playerX] = 0;
+                    playerY = playerY + 4;
+                    map[playerY, playerX] = name;
+                    contsP++;
+                }
+                else if (map[playerY + 2, playerX] == 0 || map[playerY + 3, playerX] == 9)
+                {
+                    map[playerY, playerX] = 0;
+                    playerY = playerY + 2;
+                    map[playerY, playerX] = name;
+                    contsP++;
+                }
             }
 
             
