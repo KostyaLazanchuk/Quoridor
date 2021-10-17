@@ -1,5 +1,5 @@
 ﻿using Quoridor.Map;
-using Quoridor.Menu;
+using Quoridor.View;
 using Quoridor.MoveChar;
 using System;
 using System.Threading;
