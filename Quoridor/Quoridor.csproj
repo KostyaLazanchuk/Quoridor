@@ -6,8 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AI\NewFolder\" />
-    <Folder Include="NewFolder\" />
+    <Compile Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
   </ItemGroup>
 
 </Project>

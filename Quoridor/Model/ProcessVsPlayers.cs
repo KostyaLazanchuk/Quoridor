@@ -44,26 +44,7 @@ namespace Quoridor
                             else
                             {
                                 logicInfo.PutWall(ref logicInfo.y, ref logicInfo.x, ref logicInfo.name1, ref map, ref logicInfo.contsW, ref logicInfo.x1, ref logicInfo.y1, ref logicInfo.name2, ref logicInfo.part, ref logicInfo.contsWallP1);
-                            }
-                            
-                           /* while (true)
-                            {
-                                if (logicInfo.contsW == 0)
-                                {
-                                    Console.Clear();
-                                    mapWork.Paint(map);
-                                    move.MoveW(ref map, logicInfo.x, logicInfo.y, logicInfo.name1, logicInfo.x1, logicInfo.y1, logicInfo.name2, ref logicInfo.contsW);
-                                }
-                                else
-                                {
-                                    mapWork.Paint(map);
-                                    logicInfo.contsW--;
-                                    logicInfo.part++;
-                                    logicInfo.contsWallP1--;
-                                    break;
-                                }
-
-                            }*/
+                            } 
                             Console.Clear();
                             break;
                         default:
@@ -80,23 +61,6 @@ namespace Quoridor
                     switch (step)
                     {
                         case "1":
-
-                            /* while (true)
-                             {
-                                 if (logicInfo.contsP == 0)
-                                 {
-                                     Console.Clear();
-                                     mapWork.Paint(map);
-                                     move.MoveP(ref logicInfo.costx1, ref logicInfo.y1, ref logicInfo.x1, ref logicInfo.name2, ref map, ref logicInfo.contsP);
-                                 }
-                                 else
-                                 {
-                                     resultPage.Check(logicInfo.name2, logicInfo.y1);
-                                     logicInfo.part--;
-                                     logicInfo.contsP--;
-                                     break;
-                                 }
-                             }*/
                             logicInfo.Step(ref logicInfo.costx1, ref logicInfo.y1, ref logicInfo.x1, ref logicInfo.name2, ref map, ref logicInfo.contsP, ref logicInfo.part);
                             Console.Clear();
                             break;
@@ -110,25 +74,6 @@ namespace Quoridor
                             {
                                 logicInfo.PutWall(ref logicInfo.y, ref logicInfo.x, ref logicInfo.name1, ref map, ref logicInfo.contsW, ref logicInfo.x1, ref logicInfo.y1, ref logicInfo.name2, ref logicInfo.part, ref logicInfo.contsWallP2);
                             }
-                           
-                           /* while (true)
-                            {
-                                if (logicInfo.contsW == 0)
-                                {
-                                    Console.Clear();
-                                    mapWork.Paint(map);
-                                    move.MoveW(ref map, logicInfo.x, logicInfo.y, logicInfo.name1, logicInfo.x1, logicInfo.y1, logicInfo.name2, ref logicInfo.contsW);
-                                }
-                                else
-                                {
-                                    mapWork.Paint(map);
-                                    logicInfo.contsW--;
-                                    logicInfo.part--;
-                                    logicInfo.contsWallP2--;
-                                    break;
-                                }
-
-                            }*/
                             Console.Clear();
                             break;
                         default:
