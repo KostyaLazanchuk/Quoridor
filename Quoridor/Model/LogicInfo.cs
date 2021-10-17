@@ -2,8 +2,7 @@
 using Quoridor.Menu;
 using Quoridor.MoveChar;
 using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace Quoridor
 {

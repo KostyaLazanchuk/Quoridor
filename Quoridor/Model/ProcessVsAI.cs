@@ -2,9 +2,7 @@
 using Quoridor.AI;
 using Quoridor.Map;
 using Quoridor.Menu;
-using Quoridor.MoveChar;
 using System;
-using System.Threading;
 
 public class ProcessVsAI
 {
@@ -25,7 +23,7 @@ public class ProcessVsAI
             if (logicInfo.part == 0)
             {
                 Console.WriteLine("Ходит Игрок");
-                Console.WriteLine("Ходить или ставить стенку (1) или (2)?");
+                Console.WriteLine("Ходить или ставить стенку (1) или (2)? \nВыйти из игры (3) ");
                 Console.WriteLine("У вас осталось " + logicInfo.contsWallP + " стенок");
                 string step = Console.ReadLine();
                 switch (step)
@@ -46,6 +44,11 @@ public class ProcessVsAI
                         }                  
                         Console.Clear();
                         break;
+                    case "3":
+                        {
+                            pages.FirstPages();
+                            break;
+                        }
                     default:
                         Console.WriteLine("Не правильно сделан ход (намжмите любую кнопку, чтобы продолжить)");
                         Console.ReadKey();

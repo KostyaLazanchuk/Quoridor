@@ -1,10 +1,6 @@
 ﻿using Quoridor.Map;
 using Quoridor.Menu;
-using Quoridor.MoveChar;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
 
 namespace Quoridor
 {
@@ -15,14 +11,14 @@ namespace Quoridor
             int[,] map = new int[19, 19];
             DrawMap mapWork = new DrawMap();
             map = mapWork.Map();
-
+            Pages pages = new Pages();
             LogicInfo logicInfo = new LogicInfo();
 
             while (true)
             {
                 mapWork.Paint(map);
                 Console.WriteLine($"Ходит игрок {logicInfo.part + 1}");
-                Console.WriteLine("Ходить или ставить стенку (1) или (2)?");
+                Console.WriteLine("Ходить или ставить стенку (1) или (2)? \nВыйти из игры (3)");
                 Console.WriteLine("Стенок у игрока 1: " + logicInfo.contsWallP1);
                 Console.WriteLine("Стенок у игрока 2: " + logicInfo.contsWallP2);
                 string step = Console.ReadLine();
@@ -44,9 +40,14 @@ namespace Quoridor
                             else
                             {
                                 logicInfo.PutWall(ref logicInfo.y, ref logicInfo.x, ref logicInfo.name1, ref map, ref logicInfo.contsW, ref logicInfo.x1, ref logicInfo.y1, ref logicInfo.name2, ref logicInfo.part, ref logicInfo.contsWallP1);
-                            } 
+                            }
                             Console.Clear();
                             break;
+                        case "3":
+                            {
+                                pages.FirstPages();
+                                break;
+                            }
                         default:
                             Console.WriteLine("Не правильно сделан ход (намжмите любую кнопку, чтобы продолжить)");
                             Console.ReadKey();
@@ -76,6 +77,11 @@ namespace Quoridor
                             }
                             Console.Clear();
                             break;
+                        case "3":
+                            {
+                                pages.FirstPages();
+                                break;
+                            }
                         default:
                             Console.WriteLine("Не правильно сделан ход (намжмите любую кнопку, чтобы продолжить)");
                             Console.ReadKey();

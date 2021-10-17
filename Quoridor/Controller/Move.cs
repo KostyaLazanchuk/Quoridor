@@ -1,9 +1,5 @@
 ﻿using Quoridor.Map;
-using Quoridor.Menu;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
 
 namespace Quoridor.MoveChar
 {
